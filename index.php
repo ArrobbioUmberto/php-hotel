@@ -58,6 +58,30 @@ $hotels = [
 
 <body>
 
+
+    <ul>
+        <?php
+        foreach ($hotels as $key => $value) :
+            var_dump($key);
+            var_dump($value);
+        ?>
+            <li>
+                <?php echo $key; ?>
+                <ul>
+                    <?php
+                    foreach ($value as $hotel) :
+                    ?>
+                        <li><?php echo $hotel; ?> </li>
+                    <?php endforeach; ?>
+                </ul>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+
+
+
+
 </body>
 
 </html>
