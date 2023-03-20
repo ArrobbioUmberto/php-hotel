@@ -53,30 +53,37 @@ $hotels = [
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Php HOTEL</title>
 </head>
 
 <body>
 
-
-    <ul>
+    <table class="table">
         <?php
         foreach ($hotels as $key => $value) :
-            var_dump($key);
+            // var_dump($key);
             var_dump($value);
         ?>
-            <li>
-                <?php echo $key; ?>
-                <ul>
-                    <?php
-                    foreach ($value as $hotel) :
-                    ?>
-                        <li><?php echo $hotel; ?> </li>
-                    <?php endforeach; ?>
-                </ul>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+            <thead>
+                <tr>
+                    <th scope="col"># <?php echo $key; ?> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($value as $hotel) :
+                ?>
+                    <tr>
+                        <th scope="row"> </th>
+                        <td>
+                            <?php echo $hotel; ?>
+                        </td>
+                    <?php endforeach ?>
+                    </tr>
+            </tbody>
+        <?php endforeach ?>
+    </table>
 
 
 
