@@ -58,32 +58,41 @@ $hotels = [
 </head>
 
 <body>
+    <div class="container p-5">
+        <div class="col-2">
+            <form action="index.php" method="GET">
+                <select class="form-select col-2" aria-label="Default select example">
+                    <option selected>Opzione parcheggio</option>
+                    <option value="1" name="no_park">NO</option>
+                    <option value="2" name="yes_park">SI</option>
+                </select>
+            </form>
 
-    <table class="table">
-        <?php
-        foreach ($hotels as $key => $value) :
-            // var_dump($key);
-            var_dump($value);
-        ?>
+        </div>
+
+        <table class="table">
             <thead>
                 <tr>
-                    <th scope="col"># <?php echo $key; ?> </th>
+                    <th>Nome</th>
+                    <th>Descrizione</th>
+                    <th>Parcheggio</th>
+                    <th>Voto</th>
+                    <th>Distanza dal centro</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($value as $hotel) :
-                ?>
+                foreach ($hotels as $hotel) { ?>
                     <tr>
-                        <th scope="row"> </th>
-                        <td>
-                            <?php echo $hotel; ?>
-                        </td>
-                    <?php endforeach ?>
+                        <?php foreach ($hotel as $value) { ?>
+                            <td><?php echo $value; ?> </td>
+                        <?php } ?>
                     </tr>
+                <?php } ?>
+                </tr>
             </tbody>
-        <?php endforeach ?>
-    </table>
+        </table>
+    </div>
 
 
 
